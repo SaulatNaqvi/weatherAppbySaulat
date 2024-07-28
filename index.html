@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!--
+    <form onsubmit="getweather(); return false">
+
+        <input type="text" name="city_name" id="cityname" placeholder="Enter ur city">
+        <label for="cityname">City:</label>
+        <button type="submit">Get weather</button>
+        </form>
+              
+         
+    <div id="result">
+
+    </div>
+    
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script type="module"> 
+  window.getweather=function (){
+    let api_key="9f926ad934c0a70f3665e95abebde8c9"
+    let city_name=document.getElementById("cityname")
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city_name.value}&appid=9f926ad934c0a70f3665e95abebde8c9`)
+    
+    .then(function (response) 
+    {
+        console.log(response.data)
+        document.getElementById("result").innerHTML=`current temp is ${res.data.main.temp}`
+
+    })
+    
+  }
+</script>
+
+
+
+
+
+  <script src="app.js"></script>
+
+
+return false page wont upload (default behaviour ko 
+prevent kr deta hai/prevent default)# onsubmit pr ya 
+function call karu
+  type module lagana sai global function nhe rehta ,
+es lia function getweather() ke jaga we use
+window.getweather-function(){}
+es6 ka undar type module lagana sai wo variable ya 
+function us script ka undar private ho jata hai 
+eg <script type="module"> var name="saulat"/local variable
+window.name="saulat"/global variable
+eg agar koe variable eg a kese dosra script mein chahya tu us 
+variable ko window.a karna para ga
+-->
+
+<input type="text" name="city_name" id="cityname" placeholder="Enter ur city">
+        <label for="cityname">City:</label>
+        <button onclick="getweather()" >Get weather</button>
+
+        <div id="result">
+
+        </div>
+
+        <script src="app.js"></script>
+</body>
+</html>
